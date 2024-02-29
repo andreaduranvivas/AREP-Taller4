@@ -5,13 +5,18 @@ import edu.arep.funciones.Cos;
 import edu.arep.funciones.Magnitude;
 import edu.arep.funciones.Sin;
 
-import static spark.Spark.port;
-import static spark.Spark.get;
+import static spark.Spark.*;
 
 public class SparkWebServer {
 
     public static void main(String... args){
         port(getPort());
+        staticFiles.location("/public");
+
+        get("/", (req, res) -> {
+            res.redirect("/index.html");
+            return null;
+        });
 
         get("hello", (req,res) ->
                 "Hello Docker!"
@@ -44,7 +49,7 @@ public class SparkWebServer {
         get("/palindrome/:str", (req, res) -> {
             String str = req.params(":str");
             StringBuilder sb = new StringBuilder(str);
-            return "Palindrome: " + (str.contentEquals(sb.reverse()) ? "Yes" : "No");
+            return "Palindrome: " + (str.contentEquals(sb.reverse()) ? "Sí" : "No :(");
         });
     }
 
