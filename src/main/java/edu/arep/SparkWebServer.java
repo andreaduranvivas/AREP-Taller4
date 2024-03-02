@@ -36,7 +36,6 @@ public class SparkWebServer {
         });
 
 
-        // Ruta para calcular el coseno
         // Ruta para calcular el coseno usando parámetros de consulta
         get("/cos", (req, res) -> {
             String angleParam = req.queryParams("angle");
@@ -49,7 +48,6 @@ public class SparkWebServer {
             }
         });
 
-        // Ruta para calcular la magnitud de un vector
         // Ruta para calcular la magnitud de un vector usando parámetros de consulta
         get("/magnitude", (req, res) -> {
             String xParam = req.queryParams("x");
@@ -64,8 +62,6 @@ public class SparkWebServer {
             }
         });
 
-
-        // Ruta para verificar si una cadena es un palíndromo (sin espacios)
         // Ruta para verificar si una cadena es un palíndromo usando parámetros de consulta
         get("/palindrome", (req, res) -> {
             String strParam = req.queryParams("str");

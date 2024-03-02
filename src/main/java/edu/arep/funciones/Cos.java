@@ -1,6 +1,12 @@
 package edu.arep.funciones;
 
 public class Cos implements Calculator {
+    /**
+     * Calculates the cosine of the given value in degrees.
+     *
+     * @param  values  array containing the value in degrees
+     * @return        the cosine of the given value
+     */
     @Override
     public double calculate(double[] values) {
         if (values.length != 1) {
