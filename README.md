@@ -1,6 +1,6 @@
 # AREP-Taller5
 
-## Andrea Durán Vivas
+### Andrea Durán Vivas
 
 Este proyecto es una aplicación web que permite a los usuarios realizar 
 cálculos básicos utilizando funciones matemáticas como seno, coseno, magnitud y 

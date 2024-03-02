@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Calcular Coseno</title>
-    <meta charset="UTF-8">
-</head>
-<body>
-<h1>Calcular Coseno</h1>
-<form action="/cos">
-    <label for="angle">Ángulo (en grados):</label><br>
-    <input type="number" id="angle" name="angle" required><br><br>
-    <input type="button" value="Calcular" onclick="loadCosMsg()">
-</form>
-<div id="cosrespmsg"></div>
+    <head>
+        <title>Calcular Coseno</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+    </head>
+    <body>
+    <div class="main-content">
+        <h1>Calcular Coseno</h1>
+        <form action="/cos">
+            <label for="angle">Ángulo (en radianes):</label><br>
+            <input type="number" id="angle" name="angle" required><br><br>
+            <input type="button" value="Calcular" id="btnVerificar" onclick="loadCosMsg()">
+        </form>
+        <div id="cosrespmsg"></div>
+    </div>
 
-<script>
-    function loadCosMsg() {
-        let angleVar = document.getElementById("angle").value;
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = function() {
-            document.getElementById("cosrespmsg").innerHTML = this.responseText;
-        }
-        xhttp.open("GET", "http://localhost:4567/cos/" + angleVar);
-        xhttp.send();
-    }
-</script>
-</body>
+    <script src="/js/calculadora.js"></script>
+    </body>
 </html>

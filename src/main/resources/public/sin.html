@@ -3,27 +3,19 @@
 <head>
     <title>Calcular Seno</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-<h1>Calcular Seno</h1>
-<form action="/sin">
-    <label for="angle">Angulo (en grados):</label><br>
-    <input type="number" id="angle" name="angle" required><br><br>
-    <input type="button" value="Calcular" onclick="loadSinMsg()">
-</form>
-<div id="sinrespmsg"></div>
+    <div class="main-content">
+        <h1>Calcular Seno</h1>
+        <form action="/sin">
+            <label for="angle">Ángulo (en radianes):</label><br>
+            <input type="number" id="angle" name="angle" required><br><br>
+            <input type="button" value="Calcular" id="btnVerificar" onclick="loadSinMsg()">
+        </form>
+        <div id="sinrespmsg"></div>
+    </div>
 
-<script>
-    function loadSinMsg() {
-        let angleVar = document.getElementById("angle").value;
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = function() {
-            document.getElementById("sinrespmsg").innerHTML = this.responseText;
-        }
-        xhttp.open("GET", "http://localhost:4567/sin/" + angleVar);
-        xhttp.send();
-    }
-</script>
+    <script src="/js/calculadora.js"></script>
 </body>
 </html>
-
